@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class ZeroGravity : MonoBehaviour
 {
-    [Header("การตั้งค่า")]
     public float gravityMultiplier = 0.1f; // ค่าความแรงโน้มถ่วง (0 = ไร้น้ำหนัก)
     public float floatDrag = 0.5f;        // แรงต้านในพื้นที่
     public bool randomRotation = true;     // ให้วัตถุหมุนแบบสุ่มหรือไม่
 
-    [Header("เอฟเฟกต์")]
-    public ParticleSystem floatingParticles;
-    public AudioClip zeroGSound;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,10 +22,6 @@ public class ZeroGravity : MonoBehaviour
             rb.useGravity = false;
             rb.linearDamping = floatDrag;
             rb.angularDamping = floatDrag * 0.5f;
-
-            // เพิ่มเอฟเฟกต์
-            if (floatingParticles) Instantiate(floatingParticles, other.transform.position, Quaternion.identity);
-            if (zeroGSound) AudioSource.PlayClipAtPoint(zeroGSound, transform.position);
 
             if (randomRotation)
             {
