@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class ZeroGravity : MonoBehaviour
 {
-    public float gravityMultiplier = 0.1f; // ค่าความแรงโน้มถ่วง (0 = ไร้น้ำหนัก)
-    public float floatDrag = 0.5f;        // แรงต้านในพื้นที่
-    public bool randomRotation = true;     // ให้วัตถุหมุนแบบสุ่มหรือไม่
+    public float gravityMultiplier = 0.1f; 
+    public float floatDrag = 0.5f;        
+    public bool randomRotation = true;     
 
 
     private void OnTriggerEnter(Collider other)
@@ -12,13 +12,12 @@ public class ZeroGravity : MonoBehaviour
         Rigidbody rb = other.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            // เก็บค่าเดิมไว้คืนค่าเมื่อออกจากโซน
             if (!rb.gameObject.GetComponent<GravityMemory>())
             {
                 rb.gameObject.AddComponent<GravityMemory>();
             }
 
-            // ตั้งค่าฟิสิกส์ใหม่
+           
             rb.useGravity = false;
             rb.linearDamping = floatDrag;
             rb.angularDamping = floatDrag * 0.5f;
@@ -42,7 +41,6 @@ public class ZeroGravity : MonoBehaviour
             GravityMemory memory = rb.GetComponent<GravityMemory>();
             if (memory)
             {
-                // คืนค่าฟิสิกส์เดิม
                 rb.useGravity = memory.originalUseGravity;
                 rb.linearDamping = memory.originalDrag;
                 rb.angularDamping = memory.originalAngularDrag;
@@ -52,7 +50,6 @@ public class ZeroGravity : MonoBehaviour
     }
 }
 
-// สคริปต์สำหรับจำค่าตั้งต้น
 public class GravityMemory : MonoBehaviour
 {
     public bool originalUseGravity;
