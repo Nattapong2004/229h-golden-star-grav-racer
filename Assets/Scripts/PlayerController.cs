@@ -3,10 +3,10 @@
 public class PlayController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float moveForce = 20f;      // แรงเคลื่อนที่
-    public float turnTorque = 50f;     // แรงบิดสำหรับเลี้ยว
-    public float brakeForce = 15f;     // แรงเบรก
-    public float maxSpeed = 30f;       // ความเร็วสูงสุด
+    public float moveForce = 20f;      
+    public float turnTorque = 50f;     
+    public float brakeForce = 15f;     
+    public float maxSpeed = 50f;       
 
     private Rigidbody rb;
     private float moveInput;
@@ -16,7 +16,7 @@ public class PlayController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.centerOfMass = Vector3.down * 0.5f;  // ลดจุดศูนย์ถ่วง
+        rb.centerOfMass = Vector3.down * 0.5f;  
     }
 
     void Update()
@@ -43,8 +43,8 @@ public class PlayController : MonoBehaviour
 
     void HandleSteering()
     {
-        // เลี้ยวได้ดีเมื่อรถกำลังเคลื่อนที่
-        if (rb.linearVelocity.magnitude > 0.1f)
+        
+        if (rb.linearVelocity.magnitude > 0.5f)
         {
             float turnMultiplier = Mathf.Clamp01(rb.linearVelocity.magnitude / 5f);
             Vector3 torque = Vector3.up * turnInput * turnTorque * turnMultiplier;

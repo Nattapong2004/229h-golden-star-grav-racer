@@ -10513,38 +10513,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1634399629}
   m_SourcePrefab: {fileID: 100100000, guid: 7d585ac5c6ca61642bf70d65291925b8, type: 3}
---- !u!1 &990314772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 990314773}
-  m_Layer: 0
-  m_Name: Car
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &990314773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 990314772}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 107.995804, y: 12.056755, z: 122.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1409376330}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &990892195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11616,7 +11584,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 990314773}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_LocalScale.x
@@ -11632,15 +11600,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -108.18581
+      value: -0.19000244
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -10.146755
+      value: 1.9099998
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -244.34
+      value: -122.14
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_LocalRotation.w
@@ -11680,7 +11648,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: ab0ce64bd5681154894a6b2e8f924dfe, type: 2}
     - target: {fileID: 919132149155446097, guid: aa10e2b4b2de53145adc74db7ecca165, type: 3}
       propertyPath: m_Name
-      value: Create_a_car_that_is__0328170622_texture
+      value: Car
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14449,7 +14417,7 @@ MonoBehaviour:
   moveForce: 30
   turnTorque: 50
   brakeForce: 15
-  maxSpeed: 30
+  maxSpeed: 60
 --- !u!64 &1409376326
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -23072,7 +23040,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 1574083038}
   - {fileID: 37980525}
-  - {fileID: 990314773}
+  - {fileID: 1098421938}
   - {fileID: 1510494149}
   - {fileID: 545242788}
   - {fileID: 2006582159}
