@@ -6,7 +6,8 @@ public class PlayController : MonoBehaviour
     public float moveForce = 20f;      
     public float turnTorque = 50f;     
     public float brakeForce = 15f;     
-    public float maxSpeed = 50f;       
+    public float maxSpeed = 50f;
+    public float accelerationFactor = 5f;
 
     private Rigidbody rb;
     private float moveInput;
@@ -37,7 +38,8 @@ public class PlayController : MonoBehaviour
 
     void HandleMovement()
     {
-        Vector3 force = transform.forward * moveInput * moveForce;
+        Vector3 acceleration = transform.forward * moveInput * accelerationFactor;
+        Vector3 force = acceleration * rb.mass;
         rb.AddForce(force, ForceMode.Force);
     }
 
